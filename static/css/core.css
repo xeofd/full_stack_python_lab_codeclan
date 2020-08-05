@@ -1,21 +1,60 @@
+/* CSS for full stack lab */
+
+/* Main items */
 body{
     padding: 0;
     margin: 0;
-    background: rgb(199, 199, 199);
+    background: rgb(231, 231, 231);
     color: rgb(20, 20, 20);
 
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
 }
-
 header{
     margin: 0 0 20px 0;
-    padding: 20px;
-    background: rgb(138, 138, 138);
+    background: rgb(11, 130, 167);
+    color: rgb(255, 255, 255);
 }
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav{
+    justify-content: right;
+}
+.nav-block{
+    padding: 35px 20px;
+    height: 21px;
+    color: rgb(255, 255, 255);
+}
+.nav-block:hover{
+    background: rgb(15, 177, 226);
+}
+
+/* Table design */
 table{
+    margin: 10px;
     width: 100%;
+    background: rgb(221, 221, 221);
+    border-collapse: collapse;
 }
+.table-row--head{
+    font-weight: bold;
+}
+.table-row--head > td{
+    padding: 10px;
+}
+.table-row--body > td{
+    border-top: 2px solid rgb(199, 199, 199);
+    padding: 10px;
+}
+.table-row--body:hover{
+    background: rgb(212, 212, 212);
+    cursor: pointer;
+}
+
 
 .flex-container{
     display: flex;
@@ -23,16 +62,44 @@ table{
 .centered-container{
     margin: 0 auto;
 }
+.centered{
+    text-align: center;
+}
 
 .cell-margin{
     margin: 0 40px 0 0;
 }
-.cell-50pc{
-    width: 50%;
+.cell-20pc{
+    width: 20%;
 }
 .cell-50pc{
     width: 50%;
 }
 .cell-80pc{
     width: 80%;
+}
+
+/* Buttons && Inputs */
+
+input, select{
+    margin: 10px 0;
+    padding: 10px 0 10px 10px;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid transparent;
+}
+.large-button{
+    margin: 10px;
+    padding: 5px 0;
+    width: 100%;
+    background: rgb(11, 130, 167);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    border: 3px solid transparent;
+}
+.large-button:hover{
+    background: rgb(15, 177, 226);
+    cursor: pointer;
 }

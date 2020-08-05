@@ -2,19 +2,19 @@
 
 {% block content %}
 
-<div class="flex-container">
+<div class="flex-container centered-container cell-80pc">
 
-    <section class="cell-50pc cell-margin">
+    <section class="cell-80pc cell-margin">
 
         <h3>Name: {{ author.first_name }} {{ author.last_name }}</h3>
 
     </section>
 
-    <section class="cell-50pc">
+    <section class="cell-20pc">
 
-        <div class="large-button">
-            <p><a href="/author/{{ author.id }}/edit">Edit this Author</a></p>
-        </div>
+        <a href="/author/{{ author.id }}/edit"><div class="large-button">
+            <p>Edit this Author</p>
+        </div></a>
 
     </section>
 

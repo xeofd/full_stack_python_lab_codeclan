@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="centered-container cell-80pc">
+<div class="centered-container cell-50pc">
 
-    <h2>Add a book</h2>
+    <form action="/books" class="centered" method="POST">
 
-    <form action="/books" method="POST">
+        <h2>Add a book</h2>
 
         <label for="title">Whats the book called?</label><br />
         <input type="text" id="title" name="title" placeholder="Book Name" required /><br />
