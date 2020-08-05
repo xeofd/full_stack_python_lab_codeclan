@@ -8,7 +8,7 @@
 
         <div class="centered">
 
-            <h2>Authors</h2>
+            <h2>Books</h2>
 
         </div>
 
@@ -16,17 +16,19 @@
 
             <thead>
                 <tr class="table-row--head">
-                    <td>First Name</td>
-                    <td>Last Name</td>
+                    <td>Title</td>
+                    <td>Release Date</td>
+                    <td>Author</td>
                 </tr>
             </thead>
 
             <tbody>
-                {% for author in authors %}
+                {% for book in books %}
                 <tr class="table-row--body">
-                    <td>{{ author.first_name }}</td>
-                    <td>{{ author.last_name }}</td>
-                    <td><a href="/authors/{{ author.id }}">More info</a></td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.release_date }}</td>
+                    <td>{{ book.author.first_name }} {{ book.author.last_name }}</td>
+                    <td><a href="/books/{{ book.id }}">More info</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -38,7 +40,7 @@
     <section class="cell-50pc">
 
         <div class="large-button">
-            <p><a href="/author/add">Add an Author</a></p>
+            <p><a href="/books/add">Add a Book</a></p>
         </div>
 
     </section>

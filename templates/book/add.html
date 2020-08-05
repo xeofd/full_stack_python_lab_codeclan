@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="centered-container cell-80pc">
+
+    <h2>Add a book</h2>
+
+    <form action="/books" method="POST">
+
+        <label for="title">Whats the book called?</label><br />
+        <input type="text" id="title" name="title" placeholder="Book Name" required /><br />
+
+        <lable for="date">When was it released?</lable><br />
+        <input type="date" id="date" name="date" required /><br />
+
+        <label for="author">Who wrote it?</label><br />
+        <select id="author" name="author">
+            {% for author in authors %}
+            <option value="{{ author.id }}">{{ author.first_name}} {{ author.last_name}}</option>
+            {% endfor %}
+        </select>
+        
+        <br />
+
+        <input type="submit" class="large-button" value="Add book" />
+
+    </form>
+
+</div>
+
+{% endblock %}

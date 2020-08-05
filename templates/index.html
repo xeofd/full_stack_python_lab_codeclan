@@ -28,7 +28,7 @@
                     <td>{{ book.title }}</td>
                     <td>{{ book.release_date }}</td>
                     <td>{{ book.author.first_name }} {{ book.author.last_name }}</td>
-                    <td><a href="/book/{{ book.id }}">More info</a></td>
+                    <td><a href="/books/{{ book.id }}">More info</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -59,7 +59,7 @@
                 <tr class="table-row--body">
                     <td>{{ author.first_name }}</td>
                     <td>{{ author.last_name }}</td>
-                    <td><a href="/author/{{ author.id }}">More info</a></td>
+                    <td><a href="/authors/{{ author.id }}">More info</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -5,6 +5,17 @@ from models.author import Author
 
 # Functions
 
+def save(author):
+    # create the sql query
+    sql = 'INSERT INTO authors (first_name, last_name) VALUES (%s, %s) RETURNING *'
+    values = [author.first_name, author.last_name]
+    result = run_sql(sql, values)
+    id = result[0]['id']
+
+    # set author id
+    author.id = id
+    return author
+
 def select_all():
     # Create authors == empty list
     authors = []

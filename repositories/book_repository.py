@@ -6,6 +6,17 @@ import repositories.author_repository as author_repo
 
 # Functions
 
+def save(book):
+    # create the sql query
+    sql = 'INSERT INTO books (title, release_date, author_id) VALUES (%s, %s, %s) RETURNING *'
+    values = [book.title, book.release_date, book.author.id]
+    result = run_sql(sql, values)
+    id = result[0]['id']
+
+    # set book id
+    book.id = id
+    return book
+
 def select_all():
     # make a list of books == empty list
     books = []

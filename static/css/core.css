@@ -1,0 +1,38 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: rgb(199, 199, 199);
+    color: rgb(20, 20, 20);
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+header{
+    margin: 0 0 20px 0;
+    padding: 20px;
+    background: rgb(138, 138, 138);
+}
+table{
+    width: 100%;
+}
+
+.flex-container{
+    display: flex;
+}
+.centered-container{
+    margin: 0 auto;
+}
+
+.cell-margin{
+    margin: 0 40px 0 0;
+}
+.cell-50pc{
+    width: 50%;
+}
+.cell-50pc{
+    width: 50%;
+}
+.cell-80pc{
+    width: 80%;
+}
