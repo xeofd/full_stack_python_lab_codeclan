@@ -1,0 +1,22 @@
+        <h3>Their books</h3>
+
+        <table>
+
+            <thead>
+                <tr class="table-row--head">
+                    <td>Title</td>
+                    <td>Release date</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for book in books %}
+                <tr class="table-row--body">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.release_date }}</td>
+                    <td><a href="/book/{{ book.id }}">More info</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>

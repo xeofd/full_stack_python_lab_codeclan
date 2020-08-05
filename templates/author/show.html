@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="flex-container">
+
+    <section class="cell-50pc cell-margin">
+
+        <h3>Name: {{ author.first_name }} {{ author.last_name }}</h3>
+
+    </section>
+
+    <section class="cell-50pc">
+
+        <div class="large-button">
+            <p><a href="/author/{{ author.id }}/edit">Edit this Author</a></p>
+        </div>
+
+        <form action="/author/{{ author.id }}/delete" method="POST">
+            <input type="large-button" value="Delete this author" />
+        </form>
+
+    </section>
+
+</div>
+
+{% endblock %}

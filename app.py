@@ -15,12 +15,16 @@ author_blueprint = Blueprint('author', __name__)
 # index
 # GET - /authors
 @author_blueprint.route('/authors')
-def index():
-    return render_template('authors/index.html')
+def authors_index():
+    authors = author_repo.select_all()
+    return render_template('authors/index.html', title='Authors', authors=authors)
 
 # show
 # GET - /authors/id 
-
+@author_blueprint.route('/authors/<id>')
+def view_author(id):
+    author = author_repo.select_author_by(id)
+    return render_template('authors/show.html', title=author.first_name+" "+author.last_name, author=author)
 
 # new
 # GET - /authors/new
@@ -36,13 +40,19 @@ def index():
 
 # delete
 # POST - /authors/id/delete
+@author_blueprint.route('/authors/<id>/delete', methods=['POST'])
+def delete_author(id):
+    author_repo.delete_author_by(id)
+    return redirect('/authors')
 
 app.register_blueprint(author_blueprint)
 
 # Route home
 @app.route('/')
 def index():
-    return render_template('index.html')
+    books = book_repo.select_all()
+    authors = author_repo.select_all()
+    return render_template('index.html', title='Home', books=books, authors=authors)
 
 # __name__ == __main__
 if (__name__ == '__main__'):

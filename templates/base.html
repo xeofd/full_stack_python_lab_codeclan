@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- META TAGS -->
+        <title>Book library - {{ title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- LINKED FILES -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" /> 
+        <link href="{{ url_for('static', filename='css/core.css') }}" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <!-- START HEADER -->
+        <header class="flex-container">
+
+            <div class="cell-50pc">
+
+                <h1>Book Library</h1>
+
+            </div>
+
+            <nav class="flex-container cell-50pc">
+                <a href="/" class="nav-block">Home</a>
+                <a href="/authors" class="nav-block">Authors</a>
+                <a href="/books" class="nav-block">Books</a>
+            </nav>
+
+        </header>
+        <!-- END HEADER -->
+
+        <!-- START MAIN -->
+        <main>
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+        <!-- END MAIN -->
+        
+    </body>
+
+</html>
